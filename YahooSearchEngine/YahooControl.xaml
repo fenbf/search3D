@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="YahooSearchEngine.YahooControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="auto" Width="auto">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Content="image Type" Grid.Row="0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <RadioButton x:Name="allBtn" GroupName="imageSizeGroup" Checked="allBtn_Click">All</RadioButton>
+            <RadioButton x:Name="smallBtn" GroupName="imageSizeGroup" Checked="smallBtn_Click">Small</RadioButton>
+            <RadioButton x:Name="mediumBtn" GroupName="imageSizeGroup" Checked="mediumBtn_Click">Medium</RadioButton>
+            <RadioButton x:Name="largeBtn" GroupName="imageSizeGroup" Checked="largeBtn_Click">Large</RadioButton>
+            <CheckBox x:Name="adult" Checked="adult_Checked" Unchecked="adult_Checked" IsChecked="False">Adult Content</CheckBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

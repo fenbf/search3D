@@ -1,0 +1,164 @@
+﻿<Window x:Class="search3D.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:search3D"
+    xmlns:engines="clr-namespace:s3dCore.SearchEngines;assembly=s3dCore"
+    Title="search3D by Fen" Height="600" Width="800"
+    WindowStyle="SingleBorderWindow"
+    Topmost="False"
+    WindowState="Normal" 
+    >
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type engines:SearchEngineDescription}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="1">
+            <Label Content="{Binding EngineName}" Foreground="Black" Margin="0"  ToolTip="{Binding Info}"/>
+            <Image Source="{Binding LogoUrl}" Margin="12,0,0,0"/>
+            </StackPanel>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    <Grid x:Name="mainCanvas" Width="auto" Height="auto" SnapsToDevicePixels="True"
+          MouseWheel="mainCanvas_MouseWheel"          
+          MouseDown="mainCanvas_MouseDown"
+          MouseUp="mainCanvas_MouseUp"
+          MouseMove="mainCanvas_MouseMove"
+          >       
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!-- top application menu/buttons-->
+        <StackPanel x:Name="appPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button x:Name="fullsccreenBtn" Margin="4" Click="fullsccreenBtn_Click">Fullscreen</Button>
+            <Button x:Name="closeAppBtn" Margin="4" Click="closeAppBtn_Click">Close Application</Button>
+        </StackPanel>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Label x:Name="statusLabel" Foreground="White" FontSize="14" Content="search3D"/>
+        </Grid>
+        
+        <!-- viewport... -->
+        <Grid Grid.Row="1" x:Name="searchAreaGrid">
+                
+            <Viewport3D Width="auto" Height="auto" x:Name="viewport">
+                <Viewport3D.Camera>
+                    <PerspectiveCamera x:Name="mainCamera" Position="0,0,10" LookDirection="0,0,-1" >
+                        <PerspectiveCamera.Transform>
+                            <Transform3DGroup>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="cameraRotX" Axis="1 0 0" Angle="0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="cameraRotY" Axis="0 1 0" Angle="0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="cameraRotZ" Axis="0 0 1" Angle="0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                            </Transform3DGroup>
+
+                        </PerspectiveCamera.Transform>
+                    </PerspectiveCamera>
+                </Viewport3D.Camera>
+
+                <ContainerUIElement3D  x:Name="mainViewport" >
+
+                </ContainerUIElement3D>
+
+                <!-- Lights -->
+                <ModelVisual3D>
+                    <ModelVisual3D.Content>
+                        <PointLight x:Name="mainLight" Color="White" Position="0, 0, 10" ConstantAttenuation="0.5" LinearAttenuation="0.00" QuadraticAttenuation="0.005" >
+                            <PointLight.Transform>
+                                <Transform3DGroup>
+                                    <RotateTransform3D>
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D x:Name="lightRotX" Axis="1 0 0" Angle="0" />
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+                                    <RotateTransform3D>
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D x:Name="lightRotY" Axis="0 1 0" Angle="0" />
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+                                    <RotateTransform3D>
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D x:Name="lightRotZ" Axis="0 0 1" Angle="0" />
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+                                </Transform3DGroup>
+                            </PointLight.Transform>
+                        </PointLight>
+                        
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+            </Viewport3D>
+
+            <StackPanel x:Name="searchPanel" >                
+                <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <TextBox x:Name="patternTb" Width="128" Height="24" Margin="4" KeyDown="patternTb_KeyDown"/>
+                    <Button x:Name="searchBtn" Margin="4" Click="searchBtn_Click" Content="Search" />
+                    <ComboBox x:Name="enginesCombo" Height="30" SelectionChanged="enginesCombo_SelectionChanged" >
+
+                    </ComboBox>                  
+                </StackPanel>
+                <Grid x:Name="customUI">
+                    
+                </Grid>
+                <Label x:Name="labelFoundImagesCount" Foreground="White"/>
+            </StackPanel>
+
+            <StackPanel x:Name="steeringPanel" Orientation="Horizontal" Height="40"  HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Button x:Name="viewLeftBtn" Height="24" Width="120" Click="viewLeftBtn_Click">Left</Button>
+                <Button x:Name="resetViewBtn" Height="24" Width="60" Click="resetViewBtn_Click">Reset View</Button>
+                <Button x:Name="viewRightBtn" Height="24" Width="120" Click="viewRightBtn_Click">Right</Button>
+            </StackPanel>
+            
+            <StackPanel x:Name="layoutPanel" Orientation="Horizontal" Height="40"  HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <ComboBox x:Name="layoutCombo" Height="24" SelectionChanged="layoutCombo_SelectionChanged">
+                </ComboBox>
+            </StackPanel>
+
+            <local:BigPicture x:Name="bigPicture" Visibility="Collapsed"/>
+            
+            
+            <!-- test when using 3Dtools -->
+            <!--
+            <local:TrackballDecorator>
+                <local:Interactive3DDecorator>
+                    <Viewport3D Width="400" Height="200">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0, 0, 10" LookDirection="0, 0, -10"/>
+                        </Viewport3D.Camera>
+
+
+                        <local:InteractiveVisual3D Geometry="{StaticResource PlaneMesh}">
+                        <local:InteractiveVisual3D.Visual>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="patternTb" Width="128" Margin="4"/>
+                                <Button x:Name="searchBtn" Margin="4" Click="searchBtn_Click">Search</Button>
+                            </StackPanel>
+                        </local:InteractiveVisual3D.Visual>
+                        </local:InteractiveVisual3D>
+
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <DirectionalLight Color="#FFFFFFFF" Direction="0,0,-1"/>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </local:Interactive3DDecorator>
+            </local:TrackballDecorator>
+            -->
+        </Grid>
+    </Grid>
+</Window>

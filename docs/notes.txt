@@ -1,0 +1,1 @@
+﻿- mouseDoubleClick event can be handled by using simple MouseDown event - just check e.ClickCount property :)

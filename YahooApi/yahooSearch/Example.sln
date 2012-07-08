@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHarness", "TestHarness\TestHarness.csproj", "{AE32183C-3FBE-461E-A3D9-39B39CB3653E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yahoo.API", "Yahoo.API\Yahoo.API.csproj", "{0945ED3A-C493-499C-A349-09DA17FA590E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE32183C-3FBE-461E-A3D9-39B39CB3653E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE32183C-3FBE-461E-A3D9-39B39CB3653E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE32183C-3FBE-461E-A3D9-39B39CB3653E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE32183C-3FBE-461E-A3D9-39B39CB3653E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0945ED3A-C493-499C-A349-09DA17FA590E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0945ED3A-C493-499C-A349-09DA17FA590E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0945ED3A-C493-499C-A349-09DA17FA590E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0945ED3A-C493-499C-A349-09DA17FA590E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,4 @@
+﻿- currently in the 3d list we can see only thumbnails, consider using images with better quality when viewing from close distance
+- memory optimizations!
+- better image presention - zoom, rotate, scale, show oryginal size, save with scale, etc, etc...
+- better error handlilng, especially search errors

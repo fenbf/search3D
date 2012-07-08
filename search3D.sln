@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "search3D", "search3D.csproj", "{67DD99DF-9A18-4D52-890A-354F6C1661C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooSearchEngine", "YahooSearchEngine\YahooSearchEngine.csproj", "{26203B12-CF47-46B3-A7E9-3EC23B3F15CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "s3dCore", "PluginLib\s3dCore.csproj", "{17B5BFB6-3A33-4EED-83F8-9C19CEDC8A7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CylinderLayout", "CylinderLayout\CylinderLayout.csproj", "{32CEA7D3-5139-48E2-A051-2C7A13381ED7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67DD99DF-9A18-4D52-890A-354F6C1661C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DD99DF-9A18-4D52-890A-354F6C1661C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DD99DF-9A18-4D52-890A-354F6C1661C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DD99DF-9A18-4D52-890A-354F6C1661C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26203B12-CF47-46B3-A7E9-3EC23B3F15CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26203B12-CF47-46B3-A7E9-3EC23B3F15CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26203B12-CF47-46B3-A7E9-3EC23B3F15CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26203B12-CF47-46B3-A7E9-3EC23B3F15CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B5BFB6-3A33-4EED-83F8-9C19CEDC8A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B5BFB6-3A33-4EED-83F8-9C19CEDC8A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B5BFB6-3A33-4EED-83F8-9C19CEDC8A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B5BFB6-3A33-4EED-83F8-9C19CEDC8A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32CEA7D3-5139-48E2-A051-2C7A13381ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32CEA7D3-5139-48E2-A051-2C7A13381ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32CEA7D3-5139-48E2-A051-2C7A13381ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32CEA7D3-5139-48E2-A051-2C7A13381ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
